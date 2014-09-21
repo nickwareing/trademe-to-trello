@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app ng-csp>
+<head>
+	<title data-message="extensionName">TradeMe to Trello</title>
+	<link rel="stylesheet" href="/css/popup.css" />
+</head>
+<body>
+	<div id="loading_wrapper" style="display: none;">
+		<h1>
+			<span data-message="extensionName">TradeMe to Trello</span>
+			<a href="#" id="close" tabindex="-1">&times;</a>
+		</h1>
+
+		<div ng-controller="BoardsCtl" id="boards_list_wrapper">
+            {{ message.name }}
+		</div>
+
+		<div class="footer">
+			<a href="#" id="logout" class="footer-link">Logout</a>
+			<a href="#" id="settings" class="footer-link">Settings</a>
+			<a href="https://trello.com/" target="_blank" class="trello-link">Trello.com</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="/javascript/angular.min.js"></script>
+	<script type="text/javascript" src="/javascript/func.js"></script>
+	<script type="text/javascript" src="/javascript/popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html ng-app ng-csp xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Boards for Trello</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/settings.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>
+        <img src="icon-128.png" alt="Trello" class="trello-logo"/>
+        Boards for Trello
+    </h1>
+
+    <div>
+        <div id="auth" class="alert">
+            <img src="/images/ajax-loader.gif" class="loader"/>
+            Checking authorisation
+        </div>
+        <div id="success" style="display: none;" class="alert alert-success">
+            <span class="checkmark">&#x2713;</span>
+            <strong>Thanks!</strong> You've successfully authorised Boards for Trello
+        </div>
+        <div id="error" style="display: none;">
+            <h1>Uh oh.</h1>
+
+            <p>Looks like something has gone wrong authorising you with Trello.</p>
+
+            <p>Please try checking your Internet connection, restarting your browser and re-installing this
+                extension.</p>
+        </div>
+    </div>
+
+    <fieldset>
+        <legend>Like Boards for Trello?</legend>
+        <div class="row">
+            <div class="span3">
+                <p class="lead text-center">
+                    Leave a Review
+                </p>
+
+                <p class="text-center">
+                    <a href="https://chrome.google.com/webstore/detail/boards-for-trello/eknhddnoflchkcccjgdddmnimjggiona/reviews">Review
+                        in the Chrome store</a>
+                </p>
+
+                <p class="text-center">
+                    &#x2605;&#x2605;&#x2605;&#x2605;&#x2605;
+                </p>
+
+                <p class="text-center">
+                    <small>
+                        Not leaving a 5-star rating? Send an
+                        <a href="mailto:paul@paulferrett.com">email</a> with how it can improve!
+                    </small>
+                </p>
+            </div>
+
+            <div class="span3">
+                <p class="lead text-center">
+                    Share
+                </p>
+
+                <p class="text-center">
+                    Help spread the good word about <a
+                        href="https://chrome.google.com/webstore/detail/boards-for-trello/eknhddnoflchkcccjgdddmnimjggiona/">Boards
+                    for Trello</a>
+                    and <a href="https://trello.com">Trello</a>.
+                </p>
+
+                <p class="text-center">
+                    <!-- AddThis Button BEGIN -->
+                    <a href="http://api.addthis.com/oexchange/0.8/forward/facebook/offer?pco=tbx32nj-1.0&amp;url=www.paulferrett.com%2F2012%2Ftrello-boards-chrome-extension%2F&amp;pubid=paulferrett" target="_blank"><img src="http://cache.addthiscdn.com/icons/v1/thumbs/32x32/facebook.png" border="0" alt="Facebook"/></a>
+                    <a href="http://api.addthis.com/oexchange/0.8/forward/twitter/offer?pco=tbx32nj-1.0&amp;url=www.paulferrett.com%2F2012%2Ftrello-boards-chrome-extension%2F&amp;pubid=paulferrett" target="_blank"><img src="http://cache.addthiscdn.com/icons/v1/thumbs/32x32/twitter.png" border="0" alt="Twitter"/></a>
+                    <a href="http://www.addthis.com/bookmark.php?source=tbx32nj-1.0&amp;=300&amp;pubid=paulferrett&amp;url=www.paulferrett.com%2F2012%2Ftrello-boards-chrome-extension%2F " target="_blank"><img src="http://cache.addthiscdn.com/icons/v1/thumbs/32x32/more.png" border="0" alt="More..."/></a>
+                    <!-- AddThis Button END -->
+                </p>
+            </div>
+
+            <div class="span3">
+                <p class="lead text-center">
+                    Make a Donation
+                </p>
+
+                <p class="text-center">
+                    Show your appriciation the old fashioned way... Donate Now
+                    <br />and join the <a href="http://www.paulferrett.com/boards-for-trello/#wall" id="donation_link" tabindex="-1"><em>Wall of Fame</em></a>!
+                </p>
+
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <p class="text-center">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+                        <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
+                    </p>
+                </form>
+            </div>
+
+            <div class="span3">
+                <p class="lead text-center">
+                    Say Hello
+                </p>
+
+                <p class="text-center">
+                    Like the extension? Say Hi!<br />
+                    <a href="mailto:paul@paulferrett.com">Send an email</a>
+                </p>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="row">
+        <div class="span6">
+            <fieldset>
+                <legend>Hidden Boards</legend>
+                <div ng-controller="SettingsCtl" class="loading_wrapper">
+                    <p ng-show="!hidden_boards.length" class="muted">
+                        <em>No boards have been hidden.</em>
+                    </p>
+                    <ul class="unstyled">
+                        <li ng-repeat="board in hidden_boards">
+                            <a href="{{board.url}}" target="_blank">
+                                <span type="button" class="close"
+                                      ng-click="unhideBoard($event, board.id)">&#x00D7;</span>
+                                {{board.name}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </fieldset>
+        </div>
+        <div class="span6">
+            <fieldset>
+                <legend>Options</legend>
+                <div ng-controller="OptionsCtl" class="loading_wrapper">
+                    <div class="row">
+                        <div class="span1">
+                            <img src="/images/option_notif_count.png" alt="Notification Count" width="60" height="60"/>
+                        </div>
+                        <div class="span5 option-pad">
+                            <label class="checkbox">
+                                <input type="checkbox" ng-checked="notif_count == 'enabled'" name="notif_count" value="enabled" ng-click="saveOption($event)" />
+                                Show Notification Count
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built by <a href="https://twitter.com/paulferrett">@paulferrett</a>,
+            with huge thanks to the team <a href="https://twitter.com/trello">@trello</a>!
+        </p>
+
+        <p>
+            Extension code is licensed under MIT and is available on <a
+                href="https://github.com/paulferrett/trelloboards">Github</a>.
+        </p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="/javascript/jquery.min.js"></script>
+<script type="text/javascript" src="/javascript/trello_client.min.js"></script>
+<script type="text/javascript" src="/javascript/func.js"></script>
+<script type="text/javascript" src="/javascript/angular.min.js"></script>
+<script type="text/javascript" src="/javascript/settings.js"></script>
+</body>
+</html>
