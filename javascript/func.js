@@ -19,6 +19,10 @@ function $onload(func) {
 	document.addEventListener('DOMContentLoaded', func, false);
 }
 
+function getHostname(url) {
+    return url.match(/^[\w-]+:\/*\[?([\w\.:-]+)\]?(?::\d+)?/)[1];
+}
+
 function toggleHidden(board_id) {
 	var hidden = JSON.parse(localStorage.trello_hidden || "[]");
 	var i = hidden.indexOf(board_id);

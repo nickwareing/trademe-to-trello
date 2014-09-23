@@ -11,8 +11,13 @@
 			<a href="#" id="close" tabindex="-1">&times;</a>
 		</h1>
 
-		<div ng-controller="BoardsCtl" id="boards_list_wrapper">
-            {{ message.name }}
+  </div>
+		<div ng-controller="BoardsCtl" ng-switch on="seen" id="boards_list_wrapper">
+            <p>{{ hostname }}</p>
+            <p ng-switch-when="true">A card for this page already exists</p>
+            <p ng-switch-when="false">
+                Card created: <a href="{{response.url}}"  target="_blank">{{response.name}}</a>
+            </p>
 		</div>
 
 		<div class="footer">

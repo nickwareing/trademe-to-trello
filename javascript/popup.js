@@ -48,29 +48,33 @@ function createTradeMeBoard($http) {
  * @constructor
  */
 function BoardsCtl($scope, $http) {
-    $scope.message = '';
-
     chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
         if (!localStorage.trademe_board) {
             createTradeMeBoard($http);
         }
 
+        if (getHostname(tabs[0].url) !== 'www.trademe.co.nz') {
+            return;
+        }
+
         var links = JSON.parse(localStorage.trademe_board_links || "[]");
         if (links.indexOf(tabs[0].url) !== -1) {
-            //Do something
-            $scope.message = "Already here";
-        } else {
-            //$scope.orgs = loadBoards();
-            var listId = JSON.parse(localStorage.trademe_board_found_list).id;
-            $http
-                .post(trelloApiUrl('/cards/') + '&idList=' + listId + '&due=null&urlSource=' + tabs[0].url)
-                .error(apiError)
-                .success(function (response) {
-                    $scope.message = response;
-                    links.push(tabs[0].url);
-                    localStorage.trademe_board_links = JSON.stringify(links)
-                });
+            $scope.$apply(function () {
+                $scope.seen = "true";
+            });
+            return;
         }
+
+        var listId = JSON.parse(localStorage.trademe_board_found_list).id;
+        $http
+            .post(trelloApiUrl('/cards/') + '&idList=' + listId + '&due=null&urlSource=' + tabs[0].url)
+            .error(apiError)
+            .success(function (response) {
+                $scope.seen = "false";
+                $scope.response = response;
+                links.push(tabs[0].url);
+                localStorage.trademe_board_links = JSON.stringify(links)
+            });
     });
 }
 
