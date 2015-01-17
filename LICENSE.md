@@ -1,6 +1,6 @@
 ## TradeMe to Trello is licensed under the MIT License
 
-### Copyright (C) 2014 Nick Wareing
+### Copyright (C) 2015 Nick Wareing
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation
@@ -15,3 +15,6 @@ THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRI
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
 CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
+
+### Adapted from Boards for Trello - Copyright (C) 2012-2013 Paul Ferrett under the MIT License
+https://github.com/paulferrett/trelloboards

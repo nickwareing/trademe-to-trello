@@ -103,27 +103,6 @@ a {
 	background-size: 18px 18px;
 }
 
-#boards_list li.org a .org-logo.org-me {
-	background-image: url(/images/me.png);
-}
-#boards_list li.org a:hover .org-logo.org-me {
-	background-image: url(/images/me-hover.png);
-}
-
-#boards_list li.org a .org-logo.org-star {
-	background-image: url(/images/star.png);
-}
-#boards_list li.org a:hover .org-logo.org-star {
-	background-image: url(/images/star-hover.png);
-}
-
-#boards_list li.org a .org-logo.org-default {
-	background-image: url(/images/org.png);
-}
-#boards_list li.org a:hover .org-logo.org-default {
-	background-image: url(/images/org-hover.png);
-}
-
 #boards_list li a:focus,
 #boards_list li a:hover {
 	background: #2887bd;
