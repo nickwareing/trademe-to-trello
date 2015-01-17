@@ -1,4 +1,4 @@
-## Boards for Trello is licensed under the MIT License
+## TradeMe to Trello is licensed under the MIT License
 
 ### Copyright (C) 2014 Nick Wareing
 
